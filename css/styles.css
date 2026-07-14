@@ -1,0 +1,472 @@
+:root {
+    --color-primary: #8CC63F; 
+    --color-primary-hover: #9BE047;
+    --color-bg-main: #0A0A0A;
+    --color-border: rgba(255, 255, 255, 0.04);
+    --text-primary: #FFFFFF;
+    --text-secondary: #888888;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg-main);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+button { font-family: inherit; border: none; background: none; cursor: pointer; outline: none; }
+
+/* ==========================================================================
+   Hero (Index) - Overlay Clareado (20% mais leve) e Fade na Base
+   ========================================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 70%, #0A0A0A 100%),
+        linear-gradient(to left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0) 100%),
+        url('../assets/background/img-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 3rem 5%;
+}
+
+.hero__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 2rem;
+    gap: 3rem;
+    max-width: 400px;
+}
+
+/* Botão Premium */
+.hero__button {
+    background-color: var(--color-primary);
+    color: #0A0A0A;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 1.1rem 3.2rem;
+    border-radius: 14px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(140, 198, 63, 0.15); 
+}
+
+.hero__button:hover {
+    transform: translateY(-2px);
+    background-color: var(--color-primary-hover);
+    box-shadow: 0 8px 25px rgba(140, 198, 63, 0.3);
+}
+
+.hero__button--outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.8rem 2.5rem;
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+.hero__button--outline:hover {
+    background-color: rgba(255,255,255,0.03);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: none;
+}
+
+/* Ícones Sociais Glassmorphism */
+.hero__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    background: rgba(15, 15, 15, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 0.4rem 1.2rem 0.4rem 0.4rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+}
+
+.icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #FFF;
+    background: rgba(15, 15, 15, 0.5);
+    border-color: rgba(255, 255, 255, 0.08);
+    transform: translateX(-5px);
+}
+.social-link:hover .icon-circle {
+    background: var(--color-primary);
+    color: #0A0A0A;
+}
+
+/* Novo bloco de texto na Hero */
+.hero__about-text {
+    text-align: right;
+    margin-top: 1rem;
+    border-right: 2px solid var(--color-primary);
+    padding-right: 1.2rem;
+}
+.about-year {
+    color: #FFF;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.about-desc {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Títulos de Seção
+   ========================================================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700; 
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #FFF;
+}
+
+.section-header p {
+    color: var(--text-secondary); 
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Galeria Premium
+   ========================================================================== */
+.gallery {
+    background-color: #0A0A0A;
+    padding-bottom: 6rem;
+    width: 100%;
+}
+
+.gallery__carousel {
+    display: flex;
+    gap: 1.2rem; 
+    overflow-x: auto;
+    padding: 1rem 5%;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+}
+.gallery__carousel::-webkit-scrollbar { display: none; }
+
+.gallery__item {
+    flex: 0 0 calc(25% - 1.2rem); 
+    min-width: 260px; 
+    border: 1px solid rgba(255, 255, 255, 0.02); 
+    border-radius: 14px; 
+    background-color: rgba(15,15,15, 0.8);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+}
+
+/* CORREÇÃO DO CORTE DA IMAGEM: Proporção natural e posicionamento focado no topo */
+.gallery__item img {
+    width: 100%;
+    height: auto; 
+    aspect-ratio: 4 / 5; /* Formato retrato para evitar cortes verticais severos */
+    object-fit: cover;
+    object-position: center 10%; /* Prende a imagem próximo ao topo para focar no cabelo/rosto */
+    transition: transform 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.gallery__item:hover {
+    border-color: rgba(140, 198, 63, 0.2);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transform: translateY(-3px);
+}
+
+.gallery__item:hover img {
+    transform: scale(1.03); 
+    filter: brightness(1.1);
+}
+
+.gallery__item-title {
+    text-align: center;
+    padding: 0.8rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #CCC;
+}
+
+/* Estilização dos botões injetados pelo JS */
+.gallery div[style*="position: relative"] button {
+    background-color: #050505 !important;
+    border: 1px solid #FFF !important;
+    color: #FFF !important;
+    width: 40px !important;
+    height: 40px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+    transition: all 0.3s ease !important;
+}
+.gallery div[style*="position: relative"] button:hover {
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    transform: translateY(-50%) scale(1.05) !important;
+}
+
+/* ==========================================================================
+   Página Agendar
+   ========================================================================== */
+.page-agendar {
+    background-image: url('../assets/background/img-background.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.booking {
+    padding: 0 5% 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); 
+    min-height: 100vh;
+}
+
+.booking__panel {
+    background-color: rgba(15, 15, 15, 0.75); 
+    backdrop-filter: blur(24px); 
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.03); 
+    border-radius: 24px; 
+    width: 95%;
+    max-width: 1350px;
+    padding: 4rem;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
+}
+
+/* Stepper (Progresso) */
+.booking__stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: #555;
+    transition: color 0.4s ease;
+}
+
+.step-indicator .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.4s ease;
+}
+
+.step-indicator span { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; }
+
+.step-indicator.active { color: #FFF; }
+.step-indicator.active .icon {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: rgba(140, 198, 63, 0.05);
+    box-shadow: 0 0 20px rgba(140, 198, 63, 0.15);
+}
+
+.step-line {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin: 0 1.5rem;
+    transform: translateY(-15px);
+}
+
+/* Telas das Etapas */
+.booking__step { display: none; animation: subtleFade 0.35s ease forwards; }
+.booking__step.active { display: block; }
+@keyframes subtleFade { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.step-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; color: #FFF;}
+.step-subtitle { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 3rem; font-weight: 300;}
+
+/* Cards de Serviço - Aparência de Seleção */
+.booking__content--services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.booking__card {
+    background-color: rgba(255,255,255,0.01);
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.booking__card::after {
+    content: '';
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%230A0A0A" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" stroke="%230A0A0A" d="M5 13l4 4L19 7"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s ease;
+}
+
+.booking__card:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(140, 198, 63, 0.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.booking__card:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* CORREÇÃO DAS IMAGENS DE SERVIÇO: Mantém formato vertical e evita cortes brutos */
+.booking__card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center 10%;
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.booking__card-info { padding: 2rem; }
+.booking__card-title { font-size: 1.4rem; font-weight: 700; color: #FFF; margin-bottom: 0.5rem; }
+.booking__card-desc { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;}
+.booking__card-link { color: var(--color-primary); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;}
+
+/* ==========================================================================
+   Footer Premium
+   ========================================================================== */
+.footer {
+    background-color: #050505; 
+    border-top: 1px solid var(--color-border);
+    padding: 5rem 5% 0 5%;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+}
+
+.footer__col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.footer__col:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.06);
+    padding-right: 4rem;
+}
+
+.footer__logo { max-width: 250px; margin-bottom: 1rem; filter: opacity(0.9); }
+.footer__slogan { color: var(--text-secondary); font-size: 0.85rem; font-style: italic; line-height: 1.6;}
+
+.footer__title { color: var(--color-primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 1.5px; }
+.footer__highlight { color: #FFF; font-weight: 500;}
+.footer__subtext { color: var(--text-secondary); font-size: 0.85rem; }
+
+.footer__copy {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    color: #555;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .booking__panel { padding: 3rem 2rem; }
+    .footer__container { flex-wrap: wrap; gap: 3rem; }
+    .footer__col:not(:last-child) { border-right: none; padding-right: 0; }
+}
+
+@media (max-width: 768px) {
+    .hero { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .hero__sidebar { align-items: center; padding: 0; text-align: center;}
+    .hero__social { align-items: center; }
+    .hero__about-text { border-right: none; border-top: 2px solid var(--color-primary); padding-right: 0; padding-top: 1rem;}
+    
+    .booking__stepper { display: none; }
+}

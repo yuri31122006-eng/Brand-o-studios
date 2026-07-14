@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Horário - Brandão Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-agendar">
+
+    <main class="booking">
+        
+        <header class="section-header">
+            <h2>NOSSOS SERVIÇOS</h2>
+            <p>Escolha o serviço ideal para o seu estilo.<br>Cada detalhe, um novo você.</p>
+        </header>
+
+        <!-- Painel Glassmorphism -->
+        <div class="booking__panel">
+            
+            <div class="booking__stepper">
+                <div class="step-indicator active" id="ind-service">
+                    <!-- Ícone Tesoura SVG -->
+                    <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path></svg></div>
+                    <span>SERVIÇO</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-indicator" id="ind-date">
+                    <!-- Ícone Calendário SVG -->
+                    <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                    <span>DATA</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-indicator" id="ind-time">
+                    <!-- Ícone Relógio SVG -->
+                    <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <span>HORÁRIO</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-indicator" id="ind-confirm">
+                    <!-- Ícone Check SVG -->
+                    <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></div>
+                    <span>CONFIRMAÇÃO</span>
+                </div>
+            </div>
+
+            <!-- Etapa 1: Serviços -->
+            <section class="booking__step active" id="step-service">
+                <div class="booking__content--services">
+                    <!-- Imagem img-corte.png -->
+                    <button type="button" class="booking__card" aria-label="Selecionar serviço Corte">
+                        <img src="assets/servicos/img-corte.png" alt="Corte" class="booking__card-img">
+                        <div class="booking__card-info">
+                            <h2 class="booking__card-title">CORTE</h2>
+                            <p class="booking__card-desc">Corte masculino moderno com acabamento premium.</p>
+                            <span class="booking__card-link">Agendar →</span>
+                        </div>
+                    </button>
+
+                    <!-- Imagem img-barba.png -->
+                    <button type="button" class="booking__card" aria-label="Selecionar serviço Barba">
+                        <img src="assets/servicos/img-barba.png" alt="Barba" class="booking__card-img">
+                        <div class="booking__card-info">
+                            <h2 class="booking__card-title">BARBA</h2>
+                            <p class="booking__card-desc">Aparar, modelar e alinhar para um visual impecável.</p>
+                            <span class="booking__card-link">Agendar →</span>
+                        </div>
+                    </button>
+
+                    <!-- Imagem img-freestyle.png -->
+                    <button type="button" class="booking__card" aria-label="Selecionar serviço Freestyle">
+                        <img src="assets/servicos/img-freestyle.png" alt="Freestyle" class="booking__card-img">
+                        <div class="booking__card-info">
+                            <h2 class="booking__card-title">FREESTYLE</h2>
+                            <p class="booking__card-desc">Corte personalizado, com arte e atitude.</p>
+                            <span class="booking__card-link">Agendar →</span>
+                        </div>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Etapas 2, 3 e 4 foram removidas para implementação posterior -->
+
+        </div>
+    </main>
+
+    <script src="js/agendar.js" defer></script>
+</body>
+</html>
